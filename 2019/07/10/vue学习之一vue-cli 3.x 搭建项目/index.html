@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/bitbug_favicon32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/bitbug_favicon16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="vue,vue cli3,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="鹦鹉螺" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Vue Cli 3 官方文档：https://cli.vuejs.org/zh/guide/ 一、安装 @vue/cli 更新到 3.x 之后，vue-cli 的包名从 vue-cli 改成了 @vue/cli 如果之前全局安装了旧版本的 vue-cli (1.x 或 2.x)，首先需要使用以下命令卸载掉   如果没有安装旧版本的 vue-cli 可以跳过卸载直接安装  123npm uninst">
+<meta name="keywords" content="vue,vue cli3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Vue学习】vue-cli 3.x搭建项目">
+<meta property="og:url" content="https://ThisNautilus.github.io/2019/07/10/vue学习之一vue-cli 3.x 搭建项目/index.html">
+<meta property="og:site_name" content="鹦鹉螺">
+<meta property="og:description" content="Vue Cli 3 官方文档：https://cli.vuejs.org/zh/guide/ 一、安装 @vue/cli 更新到 3.x 之后，vue-cli 的包名从 vue-cli 改成了 @vue/cli 如果之前全局安装了旧版本的 vue-cli (1.x 或 2.x)，首先需要使用以下命令卸载掉   如果没有安装旧版本的 vue-cli 可以跳过卸载直接安装  123npm uninst">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/b567597e0ad7fb1cbed80fbfaf655c65.png">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/4f6259c6a558493ef4adf1ad2da9e0ae.png">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/c48151ac87059139b117fb05006f2da9.png">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/0f93bea286dc92f41808d2c42c8349d4.png">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/b77ca388bc4d2b9a2106eb2df02ea108.png">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/b5a4522ddc30c04eeb8ebf82296661b9.png">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/f0728e8b8bcd87f21529b714b2028b06.png">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/ae14ffa61b74b48d2044f06e6428ca38.png">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/ae2740d6fe3f42a159528ad5e6c5786b.png">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/ae51a79bad33845ff820ecd61da37992.png">
+<meta property="og:updated_time" content="2019-08-10T00:31:26.917Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【Vue学习】vue-cli 3.x搭建项目">
+<meta name="twitter:description" content="Vue Cli 3 官方文档：https://cli.vuejs.org/zh/guide/ 一、安装 @vue/cli 更新到 3.x 之后，vue-cli 的包名从 vue-cli 改成了 @vue/cli 如果之前全局安装了旧版本的 vue-cli (1.x 或 2.x)，首先需要使用以下命令卸载掉   如果没有安装旧版本的 vue-cli 可以跳过卸载直接安装  123npm uninst">
+<meta name="twitter:image" content="https://ww1.yunjiexi.club/2019/08/10/b567597e0ad7fb1cbed80fbfaf655c65.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://ThisNautilus.github.io/2019/07/10/vue学习之一vue-cli 3.x 搭建项目/">
+
+
+
+
+
+  <title>【Vue学习】vue-cli 3.x搭建项目 | 鹦鹉螺</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">鹦鹉螺</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">即使成功无望 我亦欣然上场</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-essay">
+          <a href="/essay/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-edit"></i> <br>
+            
+            随笔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ThisNautilus.github.io/2019/07/10/vue学习之一vue-cli 3.x 搭建项目/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="鹦鹉螺">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鹦鹉螺">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">【Vue学习】vue-cli 3.x搭建项目</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-10T21:13:12+08:00">
+                2019-07-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Vue Cli 3 官方文档：<a href="https://cli.vuejs.org/zh/guide/" target="_blank" rel="noopener">https://cli.vuejs.org/zh/guide/</a></p>
+<p><strong>一、安装 @vue/cli</strong></p>
+<p>更新到 3.x 之后，vue-cli 的包名从 vue-cli 改成了 @vue/cli</p>
+<p><strong>如果之前全局安装了旧版本的 vue-cli (1.x 或 2.x)，首先需要使用以下命令卸载掉</strong></p>
+<blockquote>
+<p> 如果没有安装旧版本的 vue-cli 可以跳过卸载直接安装</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall vue-cli -g</span><br><span class="line"># OR</span><br><span class="line">yarn global remove vue-cli</span><br></pre></td></tr></table></figure>
+
+<p>然后重新安装新版本的 @vue/cli</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br><span class="line"># OR</span><br><span class="line">yarn global add @vue/cli</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<p>安装完成后，可以使用 vue -V （这个 V 是大写的）查看版本号</p>
+<p><a href="https://www.hualigs.cn/image/nk86F" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/b567597e0ad7fb1cbed80fbfaf655c65.png" alt="b567597e0ad7fb1cbed80fbfaf655c65.png"></a></p>
+<p><strong>二、创建项目的三种方式</strong></p>
+<p>1.x 和 2.x 的的 vue-cli 采用 init 命令创建项目</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack project-name</span><br></pre></td></tr></table></figure>
+
+<p>3.x 也支持这种方式，<strong>其运行结果和以前一样</strong></p>
+<p>vue/cli 3.x 还新增了<strong>图形化</strong>的方式来创建项目</p>
+<p>首先还是得在<strong>指定目录</strong>下打开终端，然后运行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue ui</span><br></pre></td></tr></table></figure>
+
+<p>然后浏览器会打开一个页面，可以按照页面将的引导创建项目</p>
+<p>不过我习惯使用命令行工具</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue create project-name</span><br></pre></td></tr></table></figure>
+
+<p>这里的 project-name 是自定义的项目名称，命令执行之后，会生成对应文件夹</p>
+<p><strong>三、参数详解</strong></p>
+<p>使用 <strong>create</strong> 命令创建项目的时候，有很多配置项需要选择</p>
+<p><strong>如果对某项配置项不熟悉，可以直接选择第一个选项</strong></p>
+<p>首先需要选择模块</p>
+<p><a href="https://www.hualigs.cn/image/nk4bN" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/4f6259c6a558493ef4adf1ad2da9e0ae.png" alt="4f6259c6a558493ef4adf1ad2da9e0ae.png"></a></p>
+<p>如果选择默认选项 default，将会构建一个最基本的 vue 项目（没有 vue-router 也没有 vuex）</p>
+<p>这里推荐选择第二项 Manually select features</p>
+<p>然后根据自己的需求，使用<strong>空格键</strong>选择具体的模块</p>
+<p><a href="https://www.hualigs.cn/image/nkmeL" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/c48151ac87059139b117fb05006f2da9.png" alt="c48151ac87059139b117fb05006f2da9.png"></a></p>
+<p>如果不熟悉上面的模块分别代表什么，可以先按照上图的示意勾选模块</p>
+<p>这样就会创建一个包含 vue-router、vuex 和 postcss 的项目</p>
+<p>勾选之后，使用<strong>回车键</strong>进入下一步</p>
+<p><a href="https://www.hualigs.cn/image/nkbEb" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/0f93bea286dc92f41808d2c42c8349d4.png" alt="0f93bea286dc92f41808d2c42c8349d4.png"></a></p>
+<p>这里需要选择路由模式，yes 是 history 模式，no 是 hash 模式</p>
+<p>萌新可以先从 hash 模式入手，不过实际项目通常采用 history 模式</p>
+<p>然后选择一个合适 CSS 的预编译工具</p>
+<p><a href="https://www.hualigs.cn/image/nkGr9" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/b77ca388bc4d2b9a2106eb2df02ea108.png" alt="b77ca388bc4d2b9a2106eb2df02ea108.png"></a> </p>
+<p>都不熟悉的话就选 <strong>sass</strong> 或者 <strong>less</strong>，因为 stylus 不支持原生 CSS 写法</p>
+<p>后面还需要选择 ESLint 的校验规则，格式化的时机，和各个插件的配置项的位置，不熟悉的话就选第一个</p>
+<p>然后就有了这样的过程：</p>
+<p><a href="https://www.hualigs.cn/image/nkJFh" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/b5a4522ddc30c04eeb8ebf82296661b9.png" alt="b5a4522ddc30c04eeb8ebf82296661b9.png"></a></p>
+<p>最后选择是否将配置项保存为预设，然后配置完成，开始生成项目</p>
+<p>项目生成之后，已经自动安装了相关的依赖项，这时候可以直接启动项目：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run serve</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><strong>四、vue.config.js</strong></p>
+<p>完成以上步骤之后，就已经可以开发 vue 项目了，但无法满足定制化的开发需求</p>
+<p>这时候就需要<strong>手动创建</strong>一个 <strong>vue.config.js，</strong>官方的配置文档可以<a href="https://cli.vuejs.org/zh/config/" target="_blank" rel="noopener">参考这里</a></p>
+<p>这里我贴一个常用的 vue.config.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// vue.config.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  baseUrl: <span class="string">'/'</span>,</span><br><span class="line">  outputDir: <span class="string">'dist'</span>, <span class="comment">// 打包的目录</span></span><br><span class="line">  lintOnSave: <span class="literal">true</span>, <span class="comment">// 在保存时校验格式</span></span><br><span class="line">  productionSourceMap: <span class="literal">false</span>, <span class="comment">// 生产环境是否生成 SourceMap</span></span><br><span class="line">  devServer: &#123;</span><br><span class="line">    open: <span class="literal">true</span>, <span class="comment">// 启动服务后是否打开浏览器</span></span><br><span class="line">    host: <span class="string">'0.0.0.0'</span>,</span><br><span class="line">    port: <span class="number">8080</span>, <span class="comment">// 服务端口</span></span><br><span class="line">    https: <span class="literal">false</span>,</span><br><span class="line">    hotOnly: <span class="literal">false</span>,</span><br><span class="line">    proxy: <span class="literal">null</span>, <span class="comment">// 设置代理</span></span><br><span class="line">    before: <span class="function"><span class="params">app</span> =&gt;</span> &#123;&#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>vue.config.js 还有很多很厉害的配置项</p>
+<p>比如<strong>构建多页面应用</strong>的 <strong>pages</strong>、<strong>改造为 pwa</strong> 的配置项 <strong>pwa</strong>、<strong>高级 CSS 打包方案</strong>  <strong>css</strong> </p>
+<p><strong>五、环境变量</strong></p>
+<p>一个项目通常有三种模式：</p>
+<p><strong>开发模式 development、测试模式 test、生产模式 production</strong></p>
+<p>而开发中通常会根据环境变量 NODE_ENV 来进行区分这三种开发模式</p>
+<p>然后通过很多的 switch… case 来判断</p>
+<p><strong>而 3.x 的项目中就不需要写 switch…case 了</strong></p>
+<p>直接在根目录下创建以 .env 为前缀的文件</p>
+<p><a href="https://www.hualigs.cn/image/nkElB" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/f0728e8b8bcd87f21529b714b2028b06.png" alt="f0728e8b8bcd87f21529b714b2028b06.png"></a></p>
+<p>这里的 .env 文件保存的是公用参数，可以在所有模式中获取到</p>
+<p>而其他文件中的参数，只能在对应模式中获取到</p>
+<p>比如 .env.development 中的参数，就只有在 development 模式下生效</p>
+<p>然后在文件内添加对应的键值对</p>
+<p><a href="https://www.hualigs.cn/image/nkQVj" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/ae14ffa61b74b48d2044f06e6428ca38.png" alt="ae14ffa61b74b48d2044f06e6428ca38.png"></a></p>
+<p>然后在 <strong>package.json</strong> 的 scripts 命令中添加对应的 mode</p>
+<p><a href="https://www.hualigs.cn/image/nkuzM" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/ae2740d6fe3f42a159528ad5e6c5786b.png" alt="ae2740d6fe3f42a159528ad5e6c5786b.png"></a></p>
+<blockquote>
+<p>serve、bulid 都有默认的模式，但最好是将模式显式的展现在配置项中</p>
+</blockquote>
+<p>然后就能在项目中获取到对应模式下的值</p>
+<p><a href="https://www.hualigs.cn/image/nkU7U" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/ae51a79bad33845ff820ecd61da37992.png" alt="ae51a79bad33845ff820ecd61da37992.png"></a></p>
+<p> 关于环境变量和模式的详情，可以参考<a href="https://cli.vuejs.org/zh/guide/mode-and-env.html#模式" target="_blank" rel="noopener">官方文档</a> </p>
+<blockquote>
+<p>转载后修改自：<a href="https://www.cnblogs.com/wisewrong/p/9740173.html" target="_blank" rel="noopener">https://www.cnblogs.com/wisewrong/p/9740173.html</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vue/" rel="tag"># vue</a>
+          
+            <a href="/tags/vue-cli3/" rel="tag"># vue cli3</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/02/vue项目部署至GitHub Pages/" rel="next" title="Vue项目部署至GitHub Pages">
+                <i class="fa fa-chevron-left"></i> Vue项目部署至GitHub Pages
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/10/vue学习之二组件之间的数据传递/" rel="prev" title="【Vue学习】组件传值">
+                【Vue学习】组件传值 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/head.jpg" alt="鹦鹉螺">
+            
+              <p class="site-author-name" itemprop="name">鹦鹉螺</p>
+              <p class="site-description motion-element" itemprop="description">前端在路上</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ThisNautilus" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="xxliyang@foxmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">鹦鹉螺</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
