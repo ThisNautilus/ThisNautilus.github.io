@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/bitbug_favicon32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/bitbug_favicon16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="vue,vuex,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="在 Vue.js 的项目中，如果项目结构简单， 父子组件之间的数据传递可以使用  props 或者 $emit 等方式 但是如果是大型项目，很多时候都需要在子组件之间传递数据，使用之前的方式就不太方便。Vue 的状态管理工具 Vuex 完美的解决了这个问题。">
+<meta name="keywords" content="vue,vuex">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【vue学习】vuex">
+<meta property="og:url" content="https://ThisNautilus.github.io/2019/07/11/vue学习之四Vuex/index.html">
+<meta property="og:site_name" content="鹦鹉螺">
+<meta property="og:description" content="在 Vue.js 的项目中，如果项目结构简单， 父子组件之间的数据传递可以使用  props 或者 $emit 等方式 但是如果是大型项目，很多时候都需要在子组件之间传递数据，使用之前的方式就不太方便。Vue 的状态管理工具 Vuex 完美的解决了这个问题。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/6125519d42d609b64ddb414a757aa915.png">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/a271515791dc2a0937c5a3239fb948fe.png">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/2b6c653850a71d65e7ede5fe5071b29b.png">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/a2ab0ad7498730696c4551a82bf00c58.gif">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/907dc78924ef2d0fca0d953953475525.png">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/71c2543b1e5890dd633d71c54eb4daf7.png">
+<meta property="og:updated_time" content="2019-08-10T00:41:21.716Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【vue学习】vuex">
+<meta name="twitter:description" content="在 Vue.js 的项目中，如果项目结构简单， 父子组件之间的数据传递可以使用  props 或者 $emit 等方式 但是如果是大型项目，很多时候都需要在子组件之间传递数据，使用之前的方式就不太方便。Vue 的状态管理工具 Vuex 完美的解决了这个问题。">
+<meta name="twitter:image" content="https://ww1.yunjiexi.club/2019/08/10/6125519d42d609b64ddb414a757aa915.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://ThisNautilus.github.io/2019/07/11/vue学习之四Vuex/">
+
+
+
+
+
+  <title>【vue学习】vuex | 鹦鹉螺</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">鹦鹉螺</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">即使成功无望 我亦欣然上场</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-essay">
+          <a href="/essay/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-edit"></i> <br>
+            
+            随笔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ThisNautilus.github.io/2019/07/11/vue学习之四Vuex/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="鹦鹉螺">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鹦鹉螺">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">【vue学习】vuex</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-11T19:13:12+08:00">
+                2019-07-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在 Vue.js 的项目中，如果项目结构简单， 父子组件之间的数据传递可以使用  props 或者 $emit 等方式</p>
+<p>但是如果是大型项目，很多时候都需要在子组件之间传递数据，使用之前的方式就不太方便。Vue 的状态管理工具 <a href="https://vuex.vuejs.org/zh-cn/" target="_blank" rel="noopener">Vuex</a> 完美的解决了这个问题。</p>
+ <a id="more"></a>
+
+<p><strong>一、安装并引入 Vuex</strong></p>
+<p>项目结构：</p>
+<p><a href="https://www.hualigs.cn/image/nkxI9" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/6125519d42d609b64ddb414a757aa915.png" alt="6125519d42d609b64ddb414a757aa915.png"></a></p>
+<p>首先使用 npm 安装 Vuex</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install vuex -S</span><br></pre></td></tr></table></figure>
+
+
+
+<p>然后在 main.js 中引入</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span></span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">'./vuex/store'</span></span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line"><span class="comment">/* eslint-disable no-new */</span><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  store,</span><br><span class="line">  render: <span class="function"><span class="params">h</span> =&gt;</span> h(App)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>二、构建核心仓库 store.js</strong></p>
+<p>Vuex 应用的状态 state 都应当存放在 store.js 里面，Vue 组件可以从 store.js 里面获取状态，可以把 store 通俗的理解为一个全局变量的仓库。</p>
+<p>但是和单纯的全局变量又有一些区别，主要体现在当 store 中的状态发生改变时，相应的 vue 组件也会得到高效更新。</p>
+<p>在 src 目录下创建一个 vuex 目录，将 store.js 放到 vuex 目录下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  <span class="comment">// 定义状态</span></span><br><span class="line">  state: &#123;</span><br><span class="line">    author: <span class="string">'Wise Wrong'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store</span><br></pre></td></tr></table></figure>
+
+<p>这是一个最简单的 store.js，里面只存放一个状态 author</p>
+<p>虽然在 main.js 中已经引入了 Vue 和 Vuex，但是这里还得再引入一次</p>
+<p><strong>三、将状态映射到组件</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;footer <span class="class"><span class="keyword">class</span></span>=<span class="string">"footer"</span>&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &lt;li v-<span class="keyword">for</span>=<span class="string">"lis in ul"</span>&gt;&#123;&#123;lis.li&#125;&#125;&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/u</span>l&gt;</span><br><span class="line">    &lt;p&gt;</span><br><span class="line">      Copyright&amp;nbsp;&amp;copy;&amp;nbsp;&#123;&#123;author&#125;&#125; - <span class="number">2016</span> All rights reserved</span><br><span class="line">    &lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>footer&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">  export default &#123;</span></span><br><span class="line"><span class="regexp">    name: 'footerDiv',</span></span><br><span class="line"><span class="regexp">    data () &#123;</span></span><br><span class="line"><span class="regexp">      return &#123;</span></span><br><span class="line"><span class="regexp">        ul: [</span></span><br><span class="line"><span class="regexp">          &#123; li: '琉璃之金' &#125;,</span></span><br><span class="line"><span class="regexp">          &#123; li: '朦胧之森' &#125;,</span></span><br><span class="line"><span class="regexp">          &#123; li: '缥缈之滔' &#125;,</span></span><br><span class="line"><span class="regexp">          &#123; li: '逍遥之火' &#125;,</span></span><br><span class="line"><span class="regexp">          &#123; li: '璀璨之沙' &#125;</span></span><br><span class="line"><span class="regexp">        ]</span></span><br><span class="line"><span class="regexp">      &#125;</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    computed: &#123;</span></span><br><span class="line"><span class="regexp">      author () &#123;</span></span><br><span class="line"><span class="regexp">        return this.$store.state.author</span></span><br><span class="line"><span class="regexp">      &#125;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这是 footer.vue 的 html 和 script 部分</p>
+<p>主要在 computed 中，将 <strong>this**</strong>.$store.state.author** 的值返回给 html 中的 author</p>
+<p>页面渲染之后，就能获取到 author 的值</p>
+<p> <a href="https://www.hualigs.cn/image/nkLCb" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/a271515791dc2a0937c5a3239fb948fe.png" alt="a271515791dc2a0937c5a3239fb948fe.png"></a></p>
+<p><strong>四、在组件中修改状态</strong></p>
+<p>然后在 header.vue 中添加一个输入框，将输入框的值传给 store.js 中的 author</p>
+<p>这里我使用了 Element-UI 作为样式框架</p>
+<p><a href="https://www.hualigs.cn/image/no0DL" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/2b6c653850a71d65e7ede5fe5071b29b.png" alt="2b6c653850a71d65e7ede5fe5071b29b.png"></a></p>
+<p>上面将输入框 input 的值绑定为 inputTxt，然后在后面的按钮 button 上绑定 click 事件，触发 setAuthor 方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">　setAuthor: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">　　　<span class="keyword">this</span>.$store.state.author = <span class="keyword">this</span>.inpuTxt</span><br><span class="line">　&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在 setAuthor 方法中，将输入框的值 inputTxt 赋给 Vuex 中的状态 author，从而实现子组件之间的数据传递</p>
+<p><a href="https://www.hualigs.cn/image/no6mF" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/a2ab0ad7498730696c4551a82bf00c58.gif" alt="a2ab0ad7498730696c4551a82bf00c58.gif"></a></p>
+<p><strong>五、官方推荐的修改状态的方式</strong></p>
+<p>上面的示例是在 setAuthor 直接使用赋值的方式修改状态 author，但是 vue 官方推荐使用下面的方法：</p>
+<p><a href="https://www.hualigs.cn/image/noDtN" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/907dc78924ef2d0fca0d953953475525.png" alt="907dc78924ef2d0fca0d953953475525.png"></a></p>
+<p>首先在 store.js 中定义一个方法 newAuthor，其中第一个参数 state 就是 $store.state，第二个参数 msg 需要另外传入</p>
+<p>然后修改 header.vue 中的 setAuthor 方法</p>
+<p><a href="https://www.hualigs.cn/image/noHah" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/71c2543b1e5890dd633d71c54eb4daf7.png" alt="71c2543b1e5890dd633d71c54eb4daf7.png"></a></p>
+<p>这里使用 $store.commit 提交 newAuthor，并将 this.inputTxt 传给 msg，从而修改 author</p>
+<p>这样显式地提交(commit) mutations，可以让我们更好的跟踪每一个状态的变化，所以在大型项目中，更推荐使用第二种方法。</p>
+<blockquote>
+<p>转载自：<a href="https://www.cnblogs.com/wisewrong/p/6344390.html" target="_blank" rel="noopener">https://www.cnblogs.com/wisewrong/p/6344390.html</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vue/" rel="tag"># vue</a>
+          
+            <a href="/tags/vuex/" rel="tag"># vuex</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/10/vue学习之三使用 vue-router 跳转页面/" rel="next" title="【Vue学习】vue-router跳转页面">
+                <i class="fa fa-chevron-left"></i> 【Vue学习】vue-router跳转页面
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/11/vue学习之五组件进阶/" rel="prev" title="【Vue学习】组件进阶">
+                【Vue学习】组件进阶 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/head.jpg" alt="鹦鹉螺">
+            
+              <p class="site-author-name" itemprop="name">鹦鹉螺</p>
+              <p class="site-description motion-element" itemprop="description">前端在路上</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ThisNautilus" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="xxliyang@foxmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">鹦鹉螺</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
