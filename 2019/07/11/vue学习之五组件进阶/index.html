@@ -79,19 +79,35 @@
 
 
 
-<meta name="description" content="组件（Component）是 Vue.js 最强大的功能之一，之前的文章都只是用到了基本的封装功能，这次将介绍一些更强大的扩展。 一、基本用法 在使用 vue-cli 创建的项目中，组件的创建非常方便，只需要新建一个 .vue 文件，然后在  中写好 HTML 代码，一个简单的组件就完成了   一个完整的组件，除了  以外，还有  和">
+<meta name="description" content="组件（Component）是 Vue.js 最强大的功能之一，之前的文章都只是用到了基本的封装功能，这次将介绍一些更强大的扩展。 一、基本用法 在使用 vue-cli 创建的项目中，组件的创建非常方便，只需要新建一个 .vue 文件，然后在 &amp;lt;template&amp;gt;中写好 HTML 代码，一个简单的组件就完成了   一个完整的组件，除了 &amp;lt;template&amp;gt;以外，还有 &amp;lt;">
 <meta name="keywords" content="vue,组件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【Vue学习】组件进阶">
 <meta property="og:url" content="https://ThisNautilus.github.io/2019/07/11/vue学习之五组件进阶/index.html">
 <meta property="og:site_name" content="鹦鹉螺">
-<meta property="og:description" content="组件（Component）是 Vue.js 最强大的功能之一，之前的文章都只是用到了基本的封装功能，这次将介绍一些更强大的扩展。 一、基本用法 在使用 vue-cli 创建的项目中，组件的创建非常方便，只需要新建一个 .vue 文件，然后在  中写好 HTML 代码，一个简单的组件就完成了   一个完整的组件，除了  以外，还有  和">
+<meta property="og:description" content="组件（Component）是 Vue.js 最强大的功能之一，之前的文章都只是用到了基本的封装功能，这次将介绍一些更强大的扩展。 一、基本用法 在使用 vue-cli 创建的项目中，组件的创建非常方便，只需要新建一个 .vue 文件，然后在 &amp;lt;template&amp;gt;中写好 HTML 代码，一个简单的组件就完成了   一个完整的组件，除了 &amp;lt;template&amp;gt;以外，还有 &amp;lt;">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/91f16332b43689b0648b5adcbc796a57.jpg">
-<meta property="og:updated_time" content="2019-08-10T00:49:32.842Z">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/88ba40ecf70da65a01c25eab9aa60d17.jpg">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/43788b645b7f0cd8e664c1eb5e62da85.jpg">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/2b64840f050cd6984466701789e87a04.jpg">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/d219f4fba691589b8997f4cd93b83f2d.jpg">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/686693c8e023d56165581526a7ce97c4.jpg">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/d83b7d4e343fd31fd4cdda185d573a4c.jpg">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/66b9de4a1e26d5b3d2ea3c48d3e63413.jpg">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/75419a06fecd8bfe619a539df4ad8f59.jpg">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/158e6790c73478064ed5653637d63ab5.gif">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/6dabad2e673ea3881cf78e315e0367ca.jpg">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/dff32d54e24c76e569eb3095bc34bb4d.jpg">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/63e3c68b34afcd5342671f0eae9ebf0d.gif">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/0833045722ae9fbbfc768d5e63a55b1c.jpg">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/394d794a105efcf84399723201f9d290.jpg">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/4f11fa792e83a784e8e78ada150d452a.jpg">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/10/7dca23592423dcb0aa9e63acc8467a33.jpg">
+<meta property="og:updated_time" content="2019-08-14T01:40:43.154Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Vue学习】组件进阶">
-<meta name="twitter:description" content="组件（Component）是 Vue.js 最强大的功能之一，之前的文章都只是用到了基本的封装功能，这次将介绍一些更强大的扩展。 一、基本用法 在使用 vue-cli 创建的项目中，组件的创建非常方便，只需要新建一个 .vue 文件，然后在  中写好 HTML 代码，一个简单的组件就完成了   一个完整的组件，除了  以外，还有  和">
+<meta name="twitter:description" content="组件（Component）是 Vue.js 最强大的功能之一，之前的文章都只是用到了基本的封装功能，这次将介绍一些更强大的扩展。 一、基本用法 在使用 vue-cli 创建的项目中，组件的创建非常方便，只需要新建一个 .vue 文件，然后在 &amp;lt;template&amp;gt;中写好 HTML 代码，一个简单的组件就完成了   一个完整的组件，除了 &amp;lt;template&amp;gt;以外，还有 &amp;lt;">
 <meta name="twitter:image" content="https://ww1.yunjiexi.club/2019/08/10/91f16332b43689b0648b5adcbc796a57.jpg">
 
 
@@ -366,53 +382,53 @@
       
         <p>组件（Component）是 Vue.js 最强大的功能之一，之前的文章都只是用到了基本的封装功能，这次将介绍一些更强大的扩展。</p>
 <p><strong>一、基本用法</strong></p>
-<p>在使用 vue-cli 创建的项目中，组件的创建非常方便，只需要新建一个 .vue 文件，然后在 <template> 中写好 HTML 代码，一个简单的组件就完成了</template></p>
+<p>在使用 vue-cli 创建的项目中，组件的创建非常方便，只需要新建一个 .vue 文件，然后在 <code>&lt;template&gt;</code>中写好 HTML 代码，一个简单的组件就完成了</p>
 <p> <a href="https://www.hualigs.cn/image/norMM" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/91f16332b43689b0648b5adcbc796a57.jpg" alt="91f16332b43689b0648b5adcbc796a57.jpg"></a></p>
-<p>一个完整的组件，除了 <template> 以外，还有 <script> 和 <style></p>
+<p>一个完整的组件，除了 <code>&lt;template&gt;</code>以外，还有 <code>&lt;script&gt;</code> 和 <code>&lt;style&gt;</code></p>
 <a id="more"></a>
 
-<p>需要注意的是，<script> 中的 <strong>data 必须是函数</strong></p>
-<p><a href="https://www.hualigs.cn/image/noqBj"><img src="https://ww1.yunjiexi.club/2019/08/10/88ba40ecf70da65a01c25eab9aa60d17.jpg" alt="88ba40ecf70da65a01c25eab9aa60d17.jpg"></a></p>
+<p>需要注意的是，<code>&lt;script&gt;</code>中的 <strong>data 必须是函数</strong></p>
+<p><a href="https://www.hualigs.cn/image/noqBj" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/88ba40ecf70da65a01c25eab9aa60d17.jpg" alt="88ba40ecf70da65a01c25eab9aa60d17.jpg"></a></p>
 <p>然后在其他文件的 js 里面引入并注册，就能直接使用这个组件了</p>
-<p><a href="https://www.hualigs.cn/image/no55U"><img src="https://ww1.yunjiexi.club/2019/08/10/43788b645b7f0cd8e664c1eb5e62da85.jpg" alt="43788b645b7f0cd8e664c1eb5e62da85.jpg"></a></p>
-<p><a href="https://www.hualigs.cn/image/noPQ3"><img src="https://ww1.yunjiexi.club/2019/08/10/2b64840f050cd6984466701789e87a04.jpg" alt="2b64840f050cd6984466701789e87a04.jpg"></a></p>
+<p><a href="https://www.hualigs.cn/image/no55U" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/43788b645b7f0cd8e664c1eb5e62da85.jpg" alt="43788b645b7f0cd8e664c1eb5e62da85.jpg"></a></p>
+<p><a href="https://www.hualigs.cn/image/noPQ3" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/2b64840f050cd6984466701789e87a04.jpg" alt="2b64840f050cd6984466701789e87a04.jpg"></a></p>
 <p><strong>二、使用 slot 分发内容</strong></p>
-<p>开发过程中，常常需要在子组件内添加新的内容，这时候可以在子组件内部留一个或者多个插口 <slot></p>
-<p><a href="https://www.hualigs.cn/image/non2B"><img src="https://ww1.yunjiexi.club/2019/08/10/d219f4fba691589b8997f4cd93b83f2d.jpg" alt="d219f4fba691589b8997f4cd93b83f2d.jpg"></a></p>
+<p>开发过程中，常常需要在子组件内添加新的内容，这时候可以在子组件内部留一个或者多个插口 <code>&lt;slot&gt;</code></p>
+<p><a href="https://www.hualigs.cn/image/non2B" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/d219f4fba691589b8997f4cd93b83f2d.jpg" alt="d219f4fba691589b8997f4cd93b83f2d.jpg"></a></p>
 <p>然后在调用这个子组件的时候加入内容</p>
-<p><a href="https://www.hualigs.cn/image/noWCS"><img src="https://ww1.yunjiexi.club/2019/08/10/686693c8e023d56165581526a7ce97c4.jpg" alt="686693c8e023d56165581526a7ce97c4.jpg"></a></p>
-<p>添加的内容就会分发到对应的 <slot> 中</p>
-<p><slot> 中还可以作为一个作用域，在子组件中定义变量，然后在父组件中自定义渲染的方式</p>
-<p> <a href="https://www.hualigs.cn/image/no1HE"><img src="https://ww1.yunjiexi.club/2019/08/10/d83b7d4e343fd31fd4cdda185d573a4c.jpg" alt="d83b7d4e343fd31fd4cdda185d573a4c.jpg"></a></p>
-<p><a href="https://www.hualigs.cn/image/noVpg"><img src="https://ww1.yunjiexi.club/2019/08/10/66b9de4a1e26d5b3d2ea3c48d3e63413.jpg" alt="66b9de4a1e26d5b3d2ea3c48d3e63413.jpg"></a></p>
-<p>这个示例中，首先在子组件中添加 <slot>，并在子组件中定义了数组变量 navs</p>
-<p>然后在父组件中以作用域 <template> 添加内容，其中 <strong>scope</strong> 是固有属性，它的值对应一个临时变量 props</p>
+<p><a href="https://www.hualigs.cn/image/noWCS" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/686693c8e023d56165581526a7ce97c4.jpg" alt="686693c8e023d56165581526a7ce97c4.jpg"></a></p>
+<p>添加的内容就会分发到对应的 <code>&lt;slot&gt;</code> 中</p>
+<p><code>&lt;slot&gt;</code> 中还可以作为一个作用域，在子组件中定义变量，然后在父组件中自定义渲染的方式</p>
+<p> <a href="https://www.hualigs.cn/image/no1HE" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/d83b7d4e343fd31fd4cdda185d573a4c.jpg" alt="d83b7d4e343fd31fd4cdda185d573a4c.jpg"></a></p>
+<p><a href="https://www.hualigs.cn/image/noVpg" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/66b9de4a1e26d5b3d2ea3c48d3e63413.jpg" alt="66b9de4a1e26d5b3d2ea3c48d3e63413.jpg"></a></p>
+<p>这个示例中，首先在子组件中添加<code>&lt;slot&gt;</code>，并在子组件中定义了数组变量 navs</p>
+<p>然后在父组件中以作用域 <code>&lt;template&gt;</code> 添加内容，其中 <strong>scope</strong> 是固有属性，它的值对应一个临时变量 props</p>
 <p>而 props 将接收从父组件传递给子组件的参数 navs </p>
-<p><a href="https://www.hualigs.cn/image/no2te"><img src="https://ww1.yunjiexi.club/2019/08/10/75419a06fecd8bfe619a539df4ad8f59.jpg" alt="75419a06fecd8bfe619a539df4ad8f59.jpg"></a></p>
+<p><a href="https://www.hualigs.cn/image/no2te" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/75419a06fecd8bfe619a539df4ad8f59.jpg" alt="75419a06fecd8bfe619a539df4ad8f59.jpg"></a></p>
 <p><strong>三、动态组件</strong></p>
 <p>Vue 还可以将多个子组件，都挂载在同一个位置，通过变量来切换组件，实现 tab 菜单这样的效果</p>
-<p><a href="https://www.hualigs.cn/image/noNxp"><img src="https://ww1.yunjiexi.club/2019/08/10/158e6790c73478064ed5653637d63ab5.gif" alt="158e6790c73478064ed5653637d63ab5.gif"></a></p>
+<p><a href="https://www.hualigs.cn/image/noNxp" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/158e6790c73478064ed5653637d63ab5.gif" alt="158e6790c73478064ed5653637d63ab5.gif"></a></p>
 <p>这样的功能可以通过路由 vue-router 实现，但路由更适合较大的组件，而且 url 会有相应的改变</p>
-<p>Vue 自身保留的 <strong><component></strong> 元素，可以将组件动态绑定到 <strong>is</strong> 特性上，从而很方便的实现动态组件切换</p>
-<p><a href="https://www.hualigs.cn/image/nocN0"><img src="https://ww1.yunjiexi.club/2019/08/10/6dabad2e673ea3881cf78e315e0367ca.jpg" alt="6dabad2e673ea3881cf78e315e0367ca.jpg"></a></p>
-<p>上例中，当 tabView 的值改变，<component> 就会渲染对应的组件，和路由的效果十分类似，但是地址栏并没有发生改变</p>
+<p>Vue 自身保留的<code>&lt;component&gt;</code>元素，可以将组件动态绑定到 <strong>is</strong> 特性上，从而很方便的实现动态组件切换</p>
+<p><a href="https://www.hualigs.cn/image/nocN0" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/6dabad2e673ea3881cf78e315e0367ca.jpg" alt="6dabad2e673ea3881cf78e315e0367ca.jpg"></a></p>
+<p>上例中，当 tabView 的值改变，<code>&lt;component&gt;</code>就会渲染对应的组件，和路由的效果十分类似，但是地址栏并没有发生改变</p>
 <p>但这样一来，每次切换组件都会重新渲染，无法保留组件上的数据。这时可以使用 <strong>keep-alive</strong> 将组件保留在内存中，避免重新渲染</p>
-<p><a href="https://www.hualigs.cn/image/noGBt"><img src="https://ww1.yunjiexi.club/2019/08/10/dff32d54e24c76e569eb3095bc34bb4d.jpg" alt="dff32d54e24c76e569eb3095bc34bb4d.jpg"></a></p>
-<p><a href="https://www.hualigs.cn/image/nobTc"><img src="https://ww1.yunjiexi.club/2019/08/10/63e3c68b34afcd5342671f0eae9ebf0d.gif" alt="63e3c68b34afcd5342671f0eae9ebf0d.gif"></a></p>
+<p><a href="https://www.hualigs.cn/image/noGBt" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/dff32d54e24c76e569eb3095bc34bb4d.jpg" alt="dff32d54e24c76e569eb3095bc34bb4d.jpg"></a></p>
+<p><a href="https://www.hualigs.cn/image/nobTc" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/63e3c68b34afcd5342671f0eae9ebf0d.gif" alt="63e3c68b34afcd5342671f0eae9ebf0d.gif"></a></p>
 <p><strong>四、递归组件</strong></p>
 <p>当组件<strong>拥有 name 属性</strong>的时候，就可以在它的模板内递归的调用自己，这在开发<strong>树形组件</strong>的时候十分有效</p>
-<p><a href="https://www.hualigs.cn/image/nop5a"><img src="https://ww1.yunjiexi.club/2019/08/10/0833045722ae9fbbfc768d5e63a55b1c.jpg" alt="0833045722ae9fbbfc768d5e63a55b1c.jpg"></a></p>
+<p><a href="https://www.hualigs.cn/image/nop5a" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/0833045722ae9fbbfc768d5e63a55b1c.jpg" alt="0833045722ae9fbbfc768d5e63a55b1c.jpg"></a></p>
 <p>上面是一个子组件，定义了 name 为 simple03，然后在模板中调用自身，结合 v-for 实现递归</p>
 <p><strong>为了防止出现死循环，在调用自身的时候，加入了 v-if 作为判定条件</strong></p>
 <p>父组件中调用的时候，需要通过 props 传入一个 tree：</p>
-<p><a href="https://www.hualigs.cn/image/no8Qk"><img src="https://ww1.yunjiexi.club/2019/08/10/394d794a105efcf84399723201f9d290.jpg" alt="394d794a105efcf84399723201f9d290.jpg"></a></p>
-<p><a href="https://www.hualigs.cn/image/no4KV"><img src="https://ww1.yunjiexi.club/2019/08/10/4f11fa792e83a784e8e78ada150d452a.jpg" alt="4f11fa792e83a784e8e78ada150d452a.jpg"></a></p>
+<p><a href="https://www.hualigs.cn/image/no8Qk" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/394d794a105efcf84399723201f9d290.jpg" alt="394d794a105efcf84399723201f9d290.jpg"></a></p>
+<p><a href="https://www.hualigs.cn/image/no4KV" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/4f11fa792e83a784e8e78ada150d452a.jpg" alt="4f11fa792e83a784e8e78ada150d452a.jpg"></a></p>
 <p>最终渲染结果：</p>
-<p><a href="https://www.hualigs.cn/image/noEHX"><img src="https://ww1.yunjiexi.club/2019/08/10/7dca23592423dcb0aa9e63acc8467a33.jpg" alt="7dca23592423dcb0aa9e63acc8467a33.jpg"></a></p>
+<p><a href="https://www.hualigs.cn/image/noEHX" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/08/10/7dca23592423dcb0aa9e63acc8467a33.jpg" alt="7dca23592423dcb0aa9e63acc8467a33.jpg"></a></p>
 <blockquote>
-<p>转载自：<a href="https://www.cnblogs.com/wisewrong/p/6380903.html">https://www.cnblogs.com/wisewrong/p/6380903.html</a></p>
+<p>转载自：<a href="https://www.cnblogs.com/wisewrong/p/6380903.html" target="_blank" rel="noopener">https://www.cnblogs.com/wisewrong/p/6380903.html</a></p>
 </blockquote>
-</script></template></p>
+
       
     </div>
     
