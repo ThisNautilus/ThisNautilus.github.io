@@ -521,76 +521,15 @@
 
       
         
-          
-            <p>从面试的立场角度出发，系统的复习Vue知识点。</p>
+          <p>从面试的立场角度出发，系统的复习Vue知识点。</p>
 <p>参考了知乎、掘金、<a href="https://mp.weixin.qq.com/s?__biz=MzIyNDg5MzM4Ng==&mid=2247487571&idx=1&sn=3f4adde2f8b31a629219b1622395824a&chksm=e80950f6df7ed9e07f1af448036e76c3510f97002379131084442b212949bbf268d40d8b72c3&mpshare=1&scene=1&srcid=&sharer_sharetime=1566374130617&sharer_shareid=7cdaae33cfb866bf634ec5a44da74d80&key=4e9b5db357baeab29e624280ae5279eb395865321351f20d7844b5a6c3688216331a5024c900e4f593ab02773036092c8c86a3fdea9905ee3bd66e63e5dfae8b8b493553c8919ac23ed2f94646e85875&ascene=1&uin=MTE0NjIxMjU0MA%3D%3D&devicetype=Windows+7&version=62060833&lang=zh_CN&pass_ticket=peFRy39YBcMhiHUXw2uVQoFkJRxCxb033RtfWf4Cm82E%2FMbmIr63exZQrzPP5hqu" target="_blank" rel="noopener">微信公众号</a>相关文章。</p>
-<h2 id="环环相扣的面试"><a href="#环环相扣的面试" class="headerlink" title="环环相扣的面试"></a><strong>环环相扣的面试</strong></h2><p>提起vue面试环节，你不得不提vue的生态，它的全家桶，像什么vue-router、vuex、vue ssr等。但是看一个前端er对vue的研究深度，不能仅仅停留在表面，更要深入它的原理背后，探究它的源码。</p>
-<p><img src="https://ww1.yunjiexi.club/2019/08/21/42ec4c3eb69d616769d2cb847376e137.jpg" alt="img"></p>
-<p>比较唬人的开场白，你不妨先照着这个结构图大概说一下，以便向面试官展示你对vue生态的全局观，然后再娓娓道来。</p>
-<p>最起码的，先从简单的聊起，请说出vue.cli项目中src目录每个文件夹和文件的用途，这个你是必须也是一定要知道的。比如说，assets文件夹是放静态资源；components是放组件；router是定义路由相关的配置;view视图；app.vue是一个应用主组件；main.js是入口文件等等。不管业务开发能力如何，首先项目目录你得有个清晰的认知。</p>
-<p>这仅仅是开胃菜，既然提到了vue的全家桶，就免不了要考察下vuex。咳咳咳，划重点来了！首先你得知道vuex是什么？怎么使用？哪种功能场景使用它？如果你不懂这个，面试官对你的印象分会直线下降。</p>
-<p>你可以这么向面试官回答，vuex是vue生态系统中的状态管理。在main.js引入store，注入，新建一个目录store，….. export 等，常用的场景有：单页应用中，组件之间的状态，音乐播放、登录状态、加入购物车等等。</p>
-<p>还有，既然已经是前后端分离了，那你总该知道什么是RESTful   API，然后怎么使用？对吧，否则你该怎么面对项目中的前后端联调呢。首先，RESTful是一个api的标准，无状态请求。请求的路由地址是固定的，如果是tp5则先路由配置中把资源路由配置好。标准方法有：.get、.post、  .put、.delete。当你回答出这些问题之后，面试官对你的好感也在慢慢上升。</p>
-<h2 id="渐入佳境的博弈"><a href="#渐入佳境的博弈" class="headerlink" title="渐入佳境的博弈"></a><strong>渐入佳境的博弈</strong></h2><p>当然，这些都问过之后，还有一个老掉牙的vue面试题，“请详细说下你对vue生命周期的理解”，这个问题很俗气，却又很经典。网上有很多关于vue生命周期的文章，但是数量太多，参差不齐。这里闰土给大家提供一个简短精干的回答，几句话便能解释清楚，而且条理清晰。</p>
-<p>vue生命周期总共分为8个阶段创建前/后，载入前/后，更新前/后，销毁前/后。</p>
-<blockquote>
-<p>创建前/后：在beforeCreated阶段，vue实例的挂载元el还没有。</p>
-</blockquote>
-<blockquote>
-<p>载入前/后：在beforeMount阶段，vue实例的$el和data都初始化了，但还是挂载之前为虚拟的dom节点，data.message还未替换。在mounted阶段，vue实例挂载完成，data.message成功渲染。</p>
-</blockquote>
-<blockquote>
-<p>更新前/后：当data变化时，会触发beforeUpdate和updated方法。</p>
-</blockquote>
-<blockquote>
-<p>销毁前/后：在执行destroy方法后，对data的改变不会再触发周期函数，说明此时vue实例已经解除了事件监听以及和dom的绑定，但是dom结构依然存在。</p>
-</blockquote>
-<p>说完life cycle，我们再来聊一个更加经典的问题，“谈谈你对vue的双向数据绑定原理的理解”。可能你在网上看过了很多款答案，或简单或详细，但很少有一款触及原理/源码深处的答案，请跟着闰土来看看这个问题该如何有深度的进行阐述？</p>
-<p>vue.js 是采用数据劫持结合发布者-订阅者模式的方式，通过Object.defineProperty()来劫持各个属性的setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。</p>
-<p>具体步骤：</p>
-<blockquote>
-<p>第一步：需要observe的数据对象进行递归遍历，包括子属性对象的属性，都加上 setter和getter。这样的话，给这个对象的某个值赋值，就会触发setter，那么就能监听到了数据变化</p>
-</blockquote>
-<blockquote>
-<p>第二步：compile解析模板指令，将模板中的变量替换成数据，然后初始化渲染页面视图，并将每个指令对应的节点绑定更新函数，添加监听数据的订阅者，一旦数据有变动，收到通知，更新视图</p>
-</blockquote>
-<blockquote>
-<p>第三步：Watcher订阅者是Observer和Compile之间通信的桥梁，主要做的事情是:</p>
-</blockquote>
-<blockquote>
-<p>1、在自身实例化时往属性订阅器(dep)里面添加自己</p>
-</blockquote>
-<blockquote>
-<p>2、自身必须有一个update()方法</p>
-</blockquote>
-<blockquote>
-<p>3、待属性变动dep.notice()通知时，能调用自身的update()方法，并触发Compile中绑定的回调，则功成身退。</p>
-</blockquote>
-<blockquote>
-<p>第四步：MVVM作为数据绑定的入口，整合Observer、Compile和Watcher三者，通过Observer来监听自己的model数据变化，通过Compile来解析编译模板指令，最终利用Watcher搭起Observer和Compile之间的通信桥梁，达到数据变化  -&gt; 视图更新；视图交互变化(input) -&gt; 数据model变更的双向绑定效果。</p>
-</blockquote>
-<p>当你和面试官聊到这个阶段，已经是渐入佳境，引人入胜，面试官可能会再抛出一个问题来探探你的上限，比如问“聊聊你对Vue.js的template编译的理解”。如果你能很好地回答这个问题，基本上vue面试环节，你就顺利通过了。</p>
-<p><strong>接下来该划重点了：</strong></p>
-<p>简而言之，就是先转化成AST树，再得到的render函数返回VNode（Vue的虚拟DOM节点）</p>
-<p>详情步骤：</p>
-<blockquote>
-<p>首先，通过compile编译器把template编译成AST语法树（abstract  syntax tree 即  源代码的抽象语法结构的树状表现形式），compile是createCompiler的返回值，createCompiler是用以创建编译器的。另外compile还负责合并option。</p>
-</blockquote>
-<blockquote>
-<p>然后，AST会经过generate（将AST语法树转化成render funtion字符串的过程）得到render函数，render的返回值是VNode，VNode是Vue的虚拟DOM节点，里面有（标签名、子节点、文本等等）</p>
-</blockquote>
-<p>基本上到这儿，Vue面试环节就结束了。当然，你还可以挑战一下自己，例如：</p>
-<ul>
-<li><strong>event &amp; v-model: 事件和v-model的实现原理</strong></li>
-<li><strong>slot &amp; keep-alive: 内置组件的实现原理</strong></li>
-<li><strong>transition: 过渡的实现原理</strong></li>
-<li><strong>vue-router: 官方路由的实现原理</strong></li>
-<li><strong>vuex: 官方状态管理的实现原理</strong></li>
-</ul>
-<h2 id="最后总结"><a href="#最后总结" class="headerlink" title="最后总结"></a><strong>最后总结</strong></h2><p>想要对vue原理有更深入的理解，看源码是一条不错的道路。当然，源码谁都能看，看不看得懂就是另外一回事儿了，你必须有一定的技术功底，此路方可行得通。如果此时有高人指路，带你入门，帮你全方位解析，一定会事半功倍。</p>
-<p>假如你通过阅读vue源码，掌握了对Vue.js的实现原理，对vue生态系统有了充分的认识，那你会在vue面试环节游刃有余，达到晋级阿里P6+的技术功底，从而提高个人竞争力，面试加分更容易拿offer。在日常的工作当中，也能提高工作效率，开发技能如虎添翼。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/28/Vue知识系统/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
