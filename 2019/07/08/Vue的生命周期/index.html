@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,">
+  <meta name="keywords" content="vue,生命周期,">
 
 
 
@@ -79,18 +79,21 @@
 
 
 
-<meta name="description" content="以下为更换电脑后部署博客的一些操作流程。">
-<meta name="keywords" content="Hexo">
+<meta name="description" content="Vue的生命周期包括beforeCreate、created、beforeMount、mounted、beforeUpdate、updated、beforeDestroy、destroyed 这8个钩子函数。">
+<meta name="keywords" content="vue,生命周期">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo更换电脑如何部署">
-<meta property="og:url" content="https://ThisNautilus.github.io/2019/05/06/Hexo更换电脑如何部署/index.html">
+<meta property="og:title" content="Vue的生命周期">
+<meta property="og:url" content="https://ThisNautilus.github.io/2019/07/08/Vue的生命周期/index.html">
 <meta property="og:site_name" content="鹦鹉螺">
-<meta property="og:description" content="以下为更换电脑后部署博客的一些操作流程。">
+<meta property="og:description" content="Vue的生命周期包括beforeCreate、created、beforeMount、mounted、beforeUpdate、updated、beforeDestroy、destroyed 这8个钩子函数。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-13T03:30:30.155Z">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/21/449b0efdeaf12681a71e5fa4b4021968.png">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/08/21/aacef99f58efe5bbcca42d3e6f92b453.jpg">
+<meta property="og:updated_time" content="2019-08-21T08:52:33.753Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo更换电脑如何部署">
-<meta name="twitter:description" content="以下为更换电脑后部署博客的一些操作流程。">
+<meta name="twitter:title" content="Vue的生命周期">
+<meta name="twitter:description" content="Vue的生命周期包括beforeCreate、created、beforeMount、mounted、beforeUpdate、updated、beforeDestroy、destroyed 这8个钩子函数。">
+<meta name="twitter:image" content="https://ww1.yunjiexi.club/2019/08/21/449b0efdeaf12681a71e5fa4b4021968.png">
 
 
 
@@ -120,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://ThisNautilus.github.io/2019/05/06/Hexo更换电脑如何部署/">
+  <link rel="canonical" href="https://ThisNautilus.github.io/2019/07/08/Vue的生命周期/">
 
 
 
 
 
-  <title>Hexo更换电脑如何部署 | 鹦鹉螺</title>
+  <title>Vue的生命周期 | 鹦鹉螺</title>
   
 
 
@@ -273,7 +276,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ThisNautilus.github.io/2019/05/06/Hexo更换电脑如何部署/">
+    <link itemprop="mainEntityOfPage" href="https://ThisNautilus.github.io/2019/07/08/Vue的生命周期/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="鹦鹉螺">
@@ -290,7 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo更换电脑如何部署</h1>
+          <h1 class="post-title" itemprop="name headline">Vue的生命周期</h1>
         
 
         <div class="post-meta">
@@ -302,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-06T10:15:12+08:00">
-                2019-05-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-08T20:03:12+08:00">
+                2019-07-08
               </time>
             
 
@@ -325,19 +328,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/实践过程/" itemprop="url" rel="index">
-                    <span itemprop="name">实践过程</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/实践过程/软件配置/" itemprop="url" rel="index">
-                    <span itemprop="name">软件配置</span>
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
                   </a>
                 </span>
 
@@ -373,52 +365,34 @@
       
 
       
-        <p> 以下为更换电脑后部署博客的一些操作流程。</p>
-<a id="more"></a>
+        <p>Vue的生命周期包括beforeCreate、created、beforeMount、mounted、beforeUpdate、updated、beforeDestroy、destroyed 这8个钩子函数。</p>
+ <a id="more"></a>
 
-<p>环境：安装Node.js</p>
-<h4 id="将原电脑中的以下文件拷贝至新电脑："><a href="#将原电脑中的以下文件拷贝至新电脑：" class="headerlink" title="将原电脑中的以下文件拷贝至新电脑："></a>将原电脑中的以下文件拷贝至新电脑：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>_config.yml</span><br><span class="line"><span class="number">2.</span>package.json</span><br><span class="line"><span class="number">3.</span>scaffolds/</span><br><span class="line"><span class="number">4.</span>source/</span><br><span class="line"><span class="number">5.</span>themes/</span><br></pre></td></tr></table></figure>
+<p><img src="https://ww1.yunjiexi.club/2019/08/21/449b0efdeaf12681a71e5fa4b4021968.png" alt="449b0efdeaf12681a71e5fa4b4021968.png"></p>
+<p>在谈到Vue的生命周期的时候，我们首先需要创建一个实例，也就是在  new Vue ( )  的对象过程当中，首先执行了init（init是vue组件里面默认去执行的），在init的过程当中首先调用了beforeCreate，然后在injections（注射）和reactivity（反应性）的时候，它会再去调用created。</p>
+<p>所以在init的时候，事件已经调用了，我们在beforeCreate的时候千万不要去修改data里面赋值的数据，最早也要放在created里面去做（添加一些行为）。</p>
+<p>当created完成之后，它会去判断instance（实例）里面是否含有“el”option（选项），如果没有的话，它会调用vm.$mount(el)这个方法，然后执行下一步；如果有的话，直接执行下一步。紧接着会判断是否含有“template”这个选项，如果有的话，它会把template解析成一个render function ，这是一个template编译的过程，结果是解析成了render函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">render (h) &#123;  </span><br><span class="line">    <span class="keyword">return</span> h(<span class="string">'div'</span>, &#123;&#125;, <span class="keyword">this</span>.text)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo:"></a>安装hexo:</h4> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
+<p>解释一下，render函数里面的传参h就是Vue里面的createElement方法，return返回一个createElement方法，其中要传3个参数，第一个参数就是创建的div标签；第二个参数传了一个对象，对象里面可以是我们组件上面的props，或者是事件之类的东西；第三个参数就是div标签里面的内容，这里我们指向了data里面的text。</p>
+<p>使用render函数的结果和我们之前使用template解析出来的结果是一样的。render函数是发生在beforeMount和mounted之间的，这也从侧面说明了，在beforeMount的时候，$el还只是我们在HTML里面写的节点，然后到mounted的时候，它就把渲染出来的内容挂载到了DOM节点上。这中间的过程其实是执行了render function的内容。</p>
+<p>在使用.vue文件开发的过程当中，我们在里面写了template模板，在经过了vue-loader的处理之后，就变成了render function，最终放到了vue-loader解析过的文件里面。</p>
+<p>这样做有什么好处呢？原因是由于在解析template变成render function的过程，是一个非常耗时的过程，vue-loader帮我们处理了这些内容之后，当我们在页面上执行vue代码的时候，效率会变得更高。</p>
+<p>beforeMount在有了render function的时候才会执行，当执行完render function之后，就会调用mounted这个钩子，在mounted挂载完毕之后，这个实例就算是走完流程了。</p>
+<p>后续的钩子函数执行的过程都是需要外部的触发才会执行。比如说有数据的变化，会调用beforeUpdate，然后经过Virtual DOM，最后updated更新完毕。当组件被销毁的时候，它会调用beforeDestory，以及destoryed。</p>
+<p>这就是vue实例从新建到销毁的一个完整流程，以及在这个过程中它会触发哪些生命周期的钩子函数。那说到这儿，可能很多童鞋会问，钩子函数是什么意思？</p>
+<p>钩子函数，其实和回调是一个概念，当系统执行到某处时，检查是否有hook，有则回调。说的更直白一点，每个组件都有属性，方法和事件。所有的生命周期都归于事件，在某个时刻自动执行。</p>
+<p>其实，当你跟面试官阐述到这儿的时候，面试官基本上已经满意你的回答了，隐约看到了你的技术功底。当然，如果你还想更进一步，让面试官对你刮目相看，达到加分的效果，你还可以这样说：</p>
+<p>在这个过程当中，Vue为我们提供了renderError方法，这个方法只有在开发的时候它才会被调用，在正式打包上线的过程当中，它是不会被调用的。它主要是帮助我们调试render里面的一些错误。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">renderError (h, err) &#123;  </span><br><span class="line">    <span class="keyword">return</span> h(<span class="string">'div'</span>, &#123;&#125;, err.stack)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="进入目录，进行模块安装："><a href="#进入目录，进行模块安装：" class="headerlink" title="进入目录，进行模块安装："></a>进入目录，进行模块安装：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git --save  <span class="comment">// 文章部署到 git 的模块</span></span><br><span class="line"><span class="comment">// 以下为选择安装</span></span><br><span class="line">npm install hexo-generator-feed --save  <span class="comment">// 建立 RSS 订阅</span></span><br><span class="line">npm install hexo-generator-sitemap --save  <span class="comment">// 建立站点地图</span></span><br></pre></td></tr></table></figure>
+<p>有且只有当render方法里面报错了，才会执行renderError方法。</p>
+<p>所以我们主动让render函数报个错：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">render (h) &#123;  </span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'render error'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s  <span class="comment">// 此步可跳过</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="部署发布文章"><a href="#部署发布文章" class="headerlink" title="部署发布文章"></a>部署发布文章</h4><p>部署发布文章前需要进行Git密钥配置。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean   <span class="comment">// 清除缓存 网页正常情况下可以忽略此条命令</span></span><br><span class="line">hexo g       <span class="comment">// 生成静态网页</span></span><br><span class="line">hexo d       <span class="comment">// 开始部署</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="配置Git密钥"><a href="#配置Git密钥" class="headerlink" title="配置Git密钥"></a>配置Git密钥</h4><h5 id="1-生成密钥对"><a href="#1-生成密钥对" class="headerlink" title="1.生成密钥对"></a>1.生成密钥对</h5><p>SSH 公钥默认储存在账户的主目录下的 ~/.ssh 目录。进去看看：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~<span class="regexp">/.ssh</span></span><br><span class="line"><span class="regexp">$ ls</span></span><br></pre></td></tr></table></figure>
-
-<p>看一下有没有id_rsa和id_rsa.pub(或者是id_dsa和id_dsa.pub之类成对的文件)，有 .pub 后缀的文件就是公钥，另一个文件则是密钥。假如没有这些文件，甚至连 .ssh 目录都没有，可以用 ssh-keygen 来创建。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"your_email@youremail.com"</span></span><br><span class="line">Creates a new ssh key using the provided email # Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> which to save the key (<span class="regexp">/home/y</span>ou/.ssh/id_rsa):</span><br></pre></td></tr></table></figure>
-
-<p>直接按Enter就行。然后，会提示你输入密码（<strong>此密码推文时需要再次输入</strong>），如下(建议输一个，安全一点，当然不输也行，应该不会有人闲的无聊冒充你去修改你的代码)：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Enter same passphrase again: [Type passphrase again]</span><br></pre></td></tr></table></figure>
-
-<p>完了之后，大概是这样：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Your public key has been saved <span class="keyword">in</span> /home/you/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is: # 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@youremail.com</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-添加公钥至Github"><a href="#2-添加公钥至Github" class="headerlink" title="2.添加公钥至Github"></a>2.添加公钥至Github</h4><p> 1、查看你生成的公钥：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cat ~<span class="regexp">/.ssh/i</span>d_rsa.pub</span><br><span class="line"></span><br><span class="line">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0X6L1zLL4VHuvGb8aJH3ippTozmReSUzgntvk434aJ/v7kOdJ/MTyBlWXFCR+HAo3FXRitBqxiX1nKhXpHAZsMciLq8vR3c8E7CjZN733f5AL8uEYJA+YZevY5UCvEg+umT7PHghKYaJwaCxV7sjYP7Z6V79OMCEAGDNXC26IBMdMgOluQjp6o6j2KAdtRBdCDS/QIU5THQDxJ9lBXjk1fiq9tITo/aXBvjZeD+gH/Apkh/<span class="number">0</span>GbO8VQLiYYmNfqqAHHeXdltORn8N7C9lOa/UW3KM7QdXo6J0GFlBVQeTE/IGqhMS5PMln3 your_email@youremail.com</span><br></pre></td></tr></table></figure>
-
-<p>2、登陆你的github帐户。点击你的头像，然后 <code>Settings -&gt; 左栏点击 SSH and GPG keys -&gt; 点击 New SSH key</code></p>
-<p>3、然后你复制上面的公钥内容，粘贴进“Key”文本域内。 title域，自己随便起个名字。</p>
-<p>4、点击 Add key。</p>
-<p>完成以后，验证下这个key是不是正常工作：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line"></span><br><span class="line">Attempts to ssh to github</span><br></pre></td></tr></table></figure>
-
-<p>如果看到如下代码，代表设置成功：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi xxx! You<span class="string">'ve successfully authenticated, but GitHub does not # provide shell access.</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>此时即可进行正常的文章部署</strong></p>
-<p>参考文章：</p>
-<ul>
-<li><a href="https://blog.csdn.net/lvonve/article/details/79587321" target="_blank" rel="noopener">换了电脑如何使用hexo继续写博客</a></li>
-<li><a href="https://blog.csdn.net/xjm850552586/article/details/84101308" target="_blank" rel="noopener">更换电脑时转移hexo博客</a></li>
-<li><a href="https://www.cnblogs.com/superGG1990/p/6844952.html" target="_blank" rel="noopener">初次安装git配置用户名和邮箱</a></li>
-</ul>
+<p><img src="https://ww1.yunjiexi.club/2019/08/21/aacef99f58efe5bbcca42d3e6f92b453.jpg" alt="aacef99f58efe5bbcca42d3e6f92b453.jpg"></p>
+<p>如图所示，渲染出来的就是Error信息了。还有一点，renderError只有在本组件的render方法报错的情况下它才会被调用。</p>
+<h3 id="最后，总结一下："><a href="#最后，总结一下：" class="headerlink" title="最后，总结一下："></a>最后，总结一下：</h3><p>以上是关于vue的生命周期的一个详细的阐述，实际运用中只需要记住在vue的生命周期里有哪些钩子函数，它们分别是在什么情况下会被调用，以及其中的一些原理即可。</p>
 
       
     </div>
@@ -436,7 +410,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+            <a href="/tags/vue/" rel="tag"># vue</a>
+          
+            <a href="/tags/生命周期/" rel="tag"># 生命周期</a>
           
         </div>
       
@@ -449,8 +425,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/02/SublimeText3插件安装/" rel="next" title="SublimeText3插件安装">
-                <i class="fa fa-chevron-left"></i> SublimeText3插件安装
+              <a href="/2019/07/02/vue项目部署至GitHub Pages/" rel="next" title="Vue项目部署至GitHub Pages">
+                <i class="fa fa-chevron-left"></i> Vue项目部署至GitHub Pages
               </a>
             
           </div>
@@ -459,8 +435,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/12/JavaScript中on事件与addEventListener()/" rel="prev" title="JavaScript中on事件与addEventListener()">
-                JavaScript中on事件与addEventListener() <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/09/钩子函数和回调函数的区别/" rel="prev" title="钩子函数和回调函数的区别">
+                钩子函数和回调函数的区别 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -611,7 +587,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#将原电脑中的以下文件拷贝至新电脑："><span class="nav-number">1.</span> <span class="nav-text">将原电脑中的以下文件拷贝至新电脑：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装hexo"><span class="nav-number">2.</span> <span class="nav-text">安装hexo:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进入目录，进行模块安装："><span class="nav-number">3.</span> <span class="nav-text">进入目录，进行模块安装：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试"><span class="nav-number">4.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署发布文章"><span class="nav-number">5.</span> <span class="nav-text">部署发布文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置Git密钥"><span class="nav-number">6.</span> <span class="nav-text">配置Git密钥</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-生成密钥对"><span class="nav-number">6.1.</span> <span class="nav-text">1.生成密钥对</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-添加公钥至Github"><span class="nav-number">7.</span> <span class="nav-text">2.添加公钥至Github</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#最后，总结一下："><span class="nav-number">1.</span> <span class="nav-text">最后，总结一下：</span></a></li></ol></div>
             
 
           </div>
