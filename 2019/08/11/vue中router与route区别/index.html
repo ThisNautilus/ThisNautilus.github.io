@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Markdown,">
+  <meta name="keywords" content="vue,路由,">
 
 
 
@@ -79,18 +79,21 @@
 
 
 
-<meta name="description" content="常用Markdown语法 标题123456# 一级标题## 二级标题### 三级标题#### 四级标题##### 五级标题###### 六级标题">
-<meta name="keywords" content="Markdown">
+<meta name="description" content="vue-router中经常会操作的两个对象route和route和router两个。">
+<meta name="keywords" content="vue,路由">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Markdown语法">
-<meta property="og:url" content="https://ThisNautilus.github.io/2019/04/20/Markdown语法/index.html">
+<meta property="og:title" content="vue中router与route区别">
+<meta property="og:url" content="https://ThisNautilus.github.io/2019/08/11/vue中router与route区别/index.html">
 <meta property="og:site_name" content="鹦鹉螺">
-<meta property="og:description" content="常用Markdown语法 标题123456# 一级标题## 二级标题### 三级标题#### 四级标题##### 五级标题###### 六级标题">
+<meta property="og:description" content="vue-router中经常会操作的两个对象route和route和router两个。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-29T23:52:11.741Z">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/09/11/e7508af7d20aee82a166e27fc7060321.md.png">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/09/11/76a4868ff8dc2968e84f4d1600646630.md.png">
+<meta property="og:updated_time" content="2019-09-11T08:28:27.260Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Markdown语法">
-<meta name="twitter:description" content="常用Markdown语法 标题123456# 一级标题## 二级标题### 三级标题#### 四级标题##### 五级标题###### 六级标题">
+<meta name="twitter:title" content="vue中router与route区别">
+<meta name="twitter:description" content="vue-router中经常会操作的两个对象route和route和router两个。">
+<meta name="twitter:image" content="https://ww1.yunjiexi.club/2019/09/11/e7508af7d20aee82a166e27fc7060321.md.png">
 
 
 
@@ -120,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://ThisNautilus.github.io/2019/04/20/Markdown语法/">
+  <link rel="canonical" href="https://ThisNautilus.github.io/2019/08/11/vue中router与route区别/">
 
 
 
 
 
-  <title>Markdown语法 | 鹦鹉螺</title>
+  <title>vue中router与route区别 | 鹦鹉螺</title>
   
 
 
@@ -273,7 +276,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ThisNautilus.github.io/2019/04/20/Markdown语法/">
+    <link itemprop="mainEntityOfPage" href="https://ThisNautilus.github.io/2019/08/11/vue中router与route区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="鹦鹉螺">
@@ -290,7 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Markdown语法</h1>
+          <h1 class="post-title" itemprop="name headline">vue中router与route区别</h1>
         
 
         <div class="post-meta">
@@ -302,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-20T10:46:12+08:00">
-                2019-04-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-11T09:13:12+08:00">
+                2019-08-11
               </time>
             
 
@@ -325,8 +328,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/使用方法/" itemprop="url" rel="index">
-                    <span itemprop="name">使用方法</span>
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
                   </a>
                 </span>
 
@@ -362,36 +365,36 @@
       
 
       
-        <p><strong>常用Markdown语法</strong></p>
-<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
+        <p>vue-router中经常会操作的两个对象route和route和router两个。</p>
+ <a id="more"></a>
 
-<a id="more"></a>
+<p>1、$route对象<br><a href="https://www.hualigs.cn/image/qfjR9" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/09/11/e7508af7d20aee82a166e27fc7060321.md.png" alt="e7508af7d20aee82a166e27fc7060321.md.png"></a></p>
+<p>$route对象表示当前的路由信息，包含了当前 URL 解析得到的信息。包含当前的路径，参数，query对象等。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="strong">**1.$route.path**</span></span><br><span class="line"><span class="code">      字符串，对应当前路由的路径，总是解析为绝对路径，如 "/foo/bar"。</span></span><br><span class="line"><span class="strong">**2.$route.params**</span></span><br><span class="line"><span class="code">      一个 key/value 对象，包含了 动态片段 和 全匹配片段，</span></span><br><span class="line"><span class="code">      如果没有路由参数，就是一个空对象。</span></span><br><span class="line"><span class="strong">**3.$route.query**</span></span><br><span class="line"><span class="code">      一个 key/value 对象，表示 URL 查询参数。</span></span><br><span class="line"><span class="code">      例如，对于路径 /foo?user=1，则有 $route.query.user == 1，</span></span><br><span class="line"><span class="code">      如果没有查询参数，则是个空对象。</span></span><br><span class="line"><span class="strong">**4.$route.hash**</span></span><br><span class="line"><span class="code">      当前路由的 hash 值 (不带 #) ，如果没有 hash 值，则为空字符串。锚点</span></span><br><span class="line"><span class="strong">**5.$route.fullPath**</span></span><br><span class="line"><span class="code">      完成解析后的 URL，包含查询参数和 hash 的完整路径。</span></span><br><span class="line"><span class="strong">**6.$route.matched**</span></span><br><span class="line"><span class="code">      数组，包含当前匹配的路径中所包含的所有片段所对应的配置参数对象。</span></span><br><span class="line"><span class="strong">**7.$route.name    当前路径名字**</span></span><br><span class="line">**8.$route.meta  路由元信息</span><br></pre></td></tr></table></figure>
 
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- 文本1</span><br><span class="line">- 文本2</span><br><span class="line">- 文本3</span><br><span class="line">或者</span><br><span class="line">1. 文本1</span><br><span class="line">2. 文本2</span><br><span class="line">3. 文本3</span><br></pre></td></tr></table></figure>
+<p>route object 出现在多个地方:</p>
+<ul>
+<li>组件内的 this.route和route和route watcher 回调（监测变化处理）;</li>
+<li>router.match(location) 的返回值</li>
+<li>scrollBehavior 方法的参数</li>
+<li>导航钩子的参数：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">router.beforeEach(<span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// to 和 from 都是 路由信息对象,后面使用路由的钩子函数就容易理解了</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<h3 id="图片和链接"><a href="#图片和链接" class="headerlink" title="图片和链接"></a>图片和链接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![图片名称](图片链接地址)</span><br></pre></td></tr></table></figure>
+<p>2、$router对象<br><a href="https://www.hualigs.cn/image/qf1kb" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/09/11/76a4868ff8dc2968e84f4d1600646630.md.png" alt="76a4868ff8dc2968e84f4d1600646630.md.png"></a></p>
+<p>$router对象是全局路由的实例，是router构造方法的实例。</p>
+<p>路由实例方法：<br>1、push</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 字符串</span></span><br><span class="line">      <span class="keyword">this</span>.$router.push(<span class="string">'home'</span>)</span><br><span class="line"><span class="comment">// 对象</span></span><br><span class="line">      <span class="keyword">this</span>.$router.push(&#123; <span class="attr">path</span>: <span class="string">'home'</span> &#125;)</span><br><span class="line"><span class="comment">// 命名的路由</span></span><br><span class="line">      <span class="keyword">this</span>.$router.push(&#123; <span class="attr">name</span>: <span class="string">'user'</span>, <span class="attr">params</span>: &#123; <span class="attr">userId</span>: <span class="number">123</span> &#125;&#125;)</span><br><span class="line"><span class="comment">// 带查询参数，变成 /register?plan=123</span></span><br><span class="line">      <span class="keyword">this</span>.$router.push(&#123; <span class="attr">path</span>: <span class="string">'register'</span>, <span class="attr">query</span>: &#123; <span class="attr">plan</span>: <span class="string">'123'</span> &#125;&#125;)</span><br></pre></td></tr></table></figure>
 
-<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 前端学习之路</span><br></pre></td></tr></table></figure>
+<p>push方法其实和<code>&lt;router-link :to=&quot;...&quot;&gt;</code>是等同的。<br>注意：push方法的跳转会向 history 栈添加一个新的记录，当我们点击浏览器的返回按钮时可以看到之前的页面。</p>
+<p>2、go</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 页面路由跳转 前进或者后退</span></span><br><span class="line"><span class="keyword">this</span>.$router.go(<span class="number">-1</span>) <span class="comment">// 后退</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="粗体和斜体"><a href="#粗体和斜体" class="headerlink" title="粗体和斜体"></a>粗体和斜体</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">**粗体**</span><br><span class="line">*斜体*</span><br></pre></td></tr></table></figure>
+<p>3、replace</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//push方法会向 history 栈添加一个新的记录，而replace方法是替换当前的页面，</span></span><br><span class="line">不会向 history 栈添加一个新的记录</span><br><span class="line"></span><br><span class="line"><span class="comment">// 一般使用replace来做404页面</span></span><br><span class="line"><span class="keyword">this</span>.$router.replace(<span class="string">'/'</span>)</span><br></pre></td></tr></table></figure>
 
-<h3 id="代码引用"><a href="#代码引用" class="headerlink" title="代码引用"></a>代码引用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`代码段`</span><br></pre></td></tr></table></figure>
+<p>配置路由时path有时候会加 ‘/‘ 有时候不加,以’/‘开头的会被当作根路径，就不会一直嵌套之前的路径。</p>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">​</span><br></pre></td></tr></table></figure>
-
-<p>整段代码<br>​<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line">### 表格</span><br></pre></td></tr></table></figure></p>
-<p>语法：<br>|排名|公司名称|主要产品|<br>|—|—|—|<br>|1|阿里巴巴|淘宝、天猫、支付宝|<br>|2|腾讯|QQ、微信、TIM|<br>|3|字节跳动|今日头条、火山小视频、抖音|</p>
-<pre><code>
-| 排名 | 公司名称 |          主要产品          |
-| :--: | :------: | :------------------------: |
-|  1   | 阿里巴巴 |     淘宝、天猫、支付宝     |
-|  2   |   腾讯   |       QQ、微信、TIM        |
-|  3   | 字节跳动 | 今日头条、火山小视频、抖音 |
-
-
-
-
-</code></pre>
       
     </div>
     
@@ -408,7 +411,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Markdown/" rel="tag"># Markdown</a>
+            <a href="/tags/vue/" rel="tag"># vue</a>
+          
+            <a href="/tags/路由/" rel="tag"># 路由</a>
           
         </div>
       
@@ -421,14 +426,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/08/08/报错处理之“warning LF will be replaced by CRLF”/" rel="next" title="【报错处理】Git提示“warning LF will be replaced by CRLF”">
+                <i class="fa fa-chevron-left"></i> 【报错处理】Git提示“warning LF will be replaced by CRLF”
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/01/Hexo配置注意事项/" rel="prev" title="Hexo配置注意事项">
-                Hexo配置注意事项 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/11/Vue的钩子函数[路由导航守卫、keep-alive、生命周期钩子]/" rel="prev" title="【vue学习】Vue的钩子函数[路由导航守卫、keep-alive、生命周期钩子]">
+                【vue学习】Vue的钩子函数[路由导航守卫、keep-alive、生命周期钩子] <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -481,17 +490,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -569,22 +569,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#标题"><span class="nav-number">1.</span> <span class="nav-text">标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表"><span class="nav-number">2.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片和链接"><span class="nav-number">3.</span> <span class="nav-text">图片和链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用"><span class="nav-number">4.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#粗体和斜体"><span class="nav-number">5.</span> <span class="nav-text">粗体和斜体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码引用"><span class="nav-number">6.</span> <span class="nav-text">代码引用</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
