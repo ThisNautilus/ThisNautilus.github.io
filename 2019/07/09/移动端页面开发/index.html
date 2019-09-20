@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/bitbug_favicon32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/bitbug_favicon16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="移动web,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="了解移动端页面与PC端页面开发的区别，学习移动端页面的开发流程。">
+<meta name="keywords" content="移动web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端页面开发及常用CSS框架">
+<meta property="og:url" content="https://ThisNautilus.github.io/2019/07/09/移动端页面开发/index.html">
+<meta property="og:site_name" content="鹦鹉螺">
+<meta property="og:description" content="了解移动端页面与PC端页面开发的区别，学习移动端页面的开发流程。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/09/20/9d709e387feb8bb5f14b4cd13c4d8ef8.md.jpg">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/09/20/4d48e72528f330a3bc06b231007df77d.md.jpg">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/09/20/3317325b2f268e27d8ba247dc5398c9f.jpg">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/09/20/5006706c5a8693d8c9f1101cecb3e5d3.jpg">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/09/20/2a67a8b6c0a704d7139c4d4843d8ae20.jpg">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/09/20/892f77a0decb25d8157b28d8ba0bf717.md.jpg">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/09/20/43561acd84c3bf9afccd3233b34c346a.md.jpg">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/09/20/21b1cd6191cce03f298cf5579bd93c2e.md.jpg">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/09/20/a1a79ffe67cd7ad75ae9e97138f9e4a0.md.jpg">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/09/20/89aded6656e1cf541eefd9f0a6ea6f90.md.jpg">
+<meta property="og:image" content="https://ww1.yunjiexi.club/2019/09/20/a9e38ea3abe1ad674f5bbd3356539f50.jpg">
+<meta property="og:updated_time" content="2019-09-20T08:25:38.505Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动端页面开发及常用CSS框架">
+<meta name="twitter:description" content="了解移动端页面与PC端页面开发的区别，学习移动端页面的开发流程。">
+<meta name="twitter:image" content="https://ww1.yunjiexi.club/2019/09/20/9d709e387feb8bb5f14b4cd13c4d8ef8.md.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://ThisNautilus.github.io/2019/07/09/移动端页面开发/">
+
+
+
+
+
+  <title>移动端页面开发及常用CSS框架 | 鹦鹉螺</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">鹦鹉螺</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">即使成功无望 我亦欣然上场</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-essay">
+          <a href="/essay/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-edit"></i> <br>
+            
+            随笔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ThisNautilus.github.io/2019/07/09/移动端页面开发/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="鹦鹉螺">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鹦鹉螺">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">移动端页面开发及常用CSS框架</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-09T22:13:12+08:00">
+                2019-07-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTML/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTML/移动web/" itemprop="url" rel="index">
+                    <span itemprop="name">移动web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>了解移动端页面与PC端页面开发的区别，学习移动端页面的开发流程。</p>
+<a id="more"></a>
+
+<h1 id="移动端与PC端页面布局区别"><a href="#移动端与PC端页面布局区别" class="headerlink" title="移动端与PC端页面布局区别"></a><strong>移动端与PC端页面布局区别</strong></h1><p><strong>视口</strong></p>
+<p>视口是移动设备上用来显示网页的区域，一般会比移动设备可视区域大，宽度可能是980px或者1024px，目的是为了显示下整个为PC端设计的网页，这样带来的后果是移动端会出现横向滚动条，为了避免这种情况，移动端会将视口缩放到移动端窗口的大小。这样会让网页不容易观看，可以用 meta 标签，name=“viewport ” 来设置视口的大小，将视口的大小设置为和移动设备可视区一样的大小。</p>
+<p>设置方法如下( 快捷方式：meta:vp + tab )：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;......&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;......&lt;/head&gt;</span><br></pre></td></tr></table></figure>
+
+<p>pc端与移动端渲染网页过程：</p>
+<p><a href="https://www.hualigs.cn/image/qxUnD" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/09/20/9d709e387feb8bb5f14b4cd13c4d8ef8.md.jpg" alt="9d709e387feb8bb5f14b4cd13c4d8ef8.md.jpg"></a></p>
+<h1 id="视网膜屏幕（retina屏幕）清晰度解决方案"><a href="#视网膜屏幕（retina屏幕）清晰度解决方案" class="headerlink" title="视网膜屏幕（retina屏幕）清晰度解决方案"></a><strong>视网膜屏幕（retina屏幕）清晰度解决方案</strong></h1><p>视网膜屏幕指的是屏幕的物理像素密度更高的屏幕，物理像素可以理解为屏幕上的一个发光点，无数发光的点组成的屏幕，视网膜屏幕比一般屏幕的物理像素点更小，常见有2倍的视网膜屏幕和3倍的视网膜屏幕，2倍的视网膜屏幕，它的物理像素点大小是一般屏幕的1/4,3倍的视网膜屏幕，它的物理像素点大小是一般屏幕的1/9。</p>
+<p>图像在视网膜屏幕上显示的大小和在一般屏幕上显示的大小一样，但是由于视网膜屏幕的物理像素点比一般的屏幕小，图像在上面好像是被放大了，图像会变得模糊，为了解决这个问题，可以使用比原来大一倍的图像，然后用css样式强制把图像的尺寸设为原来图像尺寸的大小，就可以解决模糊的问题。</p>
+<p>清晰度解决过程示意图：</p>
+<p><a href="https://www.hualigs.cn/image/qxz9b" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/09/20/4d48e72528f330a3bc06b231007df77d.md.jpg" alt="4d48e72528f330a3bc06b231007df77d.md.jpg"></a></p>
+<p>背景图强制改变大小，可以使用background新属性</p>
+<p><strong>background新属性</strong></p>
+<p>background-size:</p>
+<p>length：用长度值指定背景图像大小。不允许负值。</p>
+<p>percentage：用百分比指定背景图像大小。不允许负值。</p>
+<p>auto：背景图像的真实大小。</p>
+<p>cover：将背景图像等比缩放到完全覆盖容器，背景图像有可能超出容器。</p>
+<p>contain：将背景图像等比缩放到宽度或高度与容器的宽度或高度相等，背景图像始终被包含在容器内。</p>
+<h1 id="适配布局类型"><a href="#适配布局类型" class="headerlink" title="适配布局类型"></a><strong>适配布局类型</strong></h1><p><strong>PC及移动端页面适配方法</strong></p>
+<p>设备屏幕有多种不同的分辨率，页面适配方案有如下几种：</p>
+<p>1、全适配：响应式布局+流体布局</p>
+<p>2、移动端适配：</p>
+<p>流体布局+少量响应式</p>
+<p>基于rem的布局</p>
+<p><strong>流体布局</strong></p>
+<p>流体布局，就是使用百分比来设置元素的宽度，元素的高度按实际高度写固定值，流体布局中，元素的边线无法用百分比，可以使用样式中的计算函数 calc() 来设置宽度，或者使用 box-sizing 属性将盒子设置为从边线计算盒子尺寸。</p>
+<p>calc()</p>
+<p>可以通过计算的方式给元素加尺寸，比如： width：calc(25% - 4px);</p>
+<p>box-sizing</p>
+<p>1、content-box 默认的盒子尺寸计算方式</p>
+<p>2、border-box 置盒子的尺寸计算方式为从边框开始，盒子的尺寸，边框和内填充算在盒子尺寸内</p>
+<p><strong>响应式布局</strong></p>
+<p>响应式布局就是使用媒体查询的方式，通过查询浏览器宽度，不同的宽度应用不同的样式块，每个样式块对应的是该宽度下的布局方式，从而实现响应式布局。响应式布局的页面可以适配多种终端屏幕（pc、平板、手机）。</p>
+<p>相应布局的伪代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media (max-width:960px)&#123; .left_con&#123;width:58%;&#125; .right_con&#123;width:38%;&#125;&#125;@media (max-width:768px)&#123; .left_con&#123;width:100%;&#125; .right_con&#123;width:100%;&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>基于rem的布局</strong></p>
+<p>首先了解em单位，em单位是参照元素自身的文字大小来设置尺寸，rem指的是参照根节点的文字大小，根节点指的是html标签，设置html标签的文字大小，其他的元素相关尺寸设置用rem，这样，所有元素都有了统一的参照标准，改变html文字的大小，就会改变所有元素用rem设置的尺寸大小。</p>
+<p>cssrem安装</p>
+<p>cssrem插件可以动态地将px尺寸换算成rem尺寸</p>
+<p>下载本项目，比如：git clone <a href="https://github.com/flashlizi/cssrem" target="_blank" rel="noopener">https://github.com/flashlizi/cssrem</a> 进入packages目录：Sublime Text -&gt; Preferences -&gt; Browse Packages… 复制下载的cssrem目录到刚才的packges目录里。 重启Sublime Text。</p>
+<p>配置参数 参数配置文件：Sublime Text -&gt; Preferences -&gt; Package Settings -&gt; cssrem px_to_rem - px转rem的单位比例，默认为40。 max_rem_fraction_length - px转rem的小数部分的最大长度。默认为6。 available_file_types - 启用此插件的文件类型。默认为：[“.css”, “.less”, “.sass”]。</p>
+<h1 id="移动端页面布局"><a href="#移动端页面布局" class="headerlink" title="移动端页面布局"></a><strong>移动端页面布局</strong></h1><p>1、结合流体布局和响应式布局制作天天生鲜移动端首页页面</p>
+<p>2、使用基于rem的布局方式制作天天生鲜移动端首页页面</p>
+<p>天天生鲜首页效果图如下：</p>
+<p><a href="https://www.hualigs.cn/image/qxy89" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/09/20/3317325b2f268e27d8ba247dc5398c9f.jpg" alt="3317325b2f268e27d8ba247dc5398c9f.jpg"></a></p>
+<h1 id="常用CSS框架"><a href="#常用CSS框架" class="headerlink" title="常用CSS框架"></a><strong>常用CSS框架</strong></h1><p>1、Twitter开源杰作 -Bootstrap</p>
+<p>Bootstrap基于HTML、CSS和JavaScript，是一款非常适合敏捷Web开发的CSS框架。</p>
+<p><a href="https://www.hualigs.cn/image/qxQS4" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/09/20/5006706c5a8693d8c9f1101cecb3e5d3.jpg" alt="5006706c5a8693d8c9f1101cecb3e5d3.jpg"></a></p>
+<p>2、扁平化UI开发包 -Flat UI</p>
+<p>Flat UI是一款基于Bootstrap的扁平化前端UI工具包。</p>
+<p><a href="https://www.hualigs.cn/image/qxIuC" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/09/20/2a67a8b6c0a704d7139c4d4843d8ae20.jpg" alt="2a67a8b6c0a704d7139c4d4843d8ae20.jpg"></a></p>
+<p>3、语义化前端开发框架 -Semantic UI</p>
+<p>SemanticUI 是一款语义化的前端开发框架</p>
+<p><a href="https://www.hualigs.cn/image/qxALL" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/09/20/892f77a0decb25d8157b28d8ba0bf717.md.jpg" alt="892f77a0decb25d8157b28d8ba0bf717.md.jpg"></a></p>
+<p>4、Metro风格的CSS框架 -BootMetro</p>
+<p><a href="https://www.hualigs.cn/image/qxdRF" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/09/20/43561acd84c3bf9afccd3233b34c346a.md.jpg" alt="43561acd84c3bf9afccd3233b34c346a.md.jpg"></a></p>
+<p>5、Win 8 Metro风格的CSS框架 -Metro UI CSS</p>
+<p><a href="https://www.hualigs.cn/image/qxkkN" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/09/20/21b1cd6191cce03f298cf5579bd93c2e.md.jpg" alt="21b1cd6191cce03f298cf5579bd93c2e.md.jpg"></a></p>
+<p>6、免费的Bootstrap主题包 -Bootswatch</p>
+<p><a href="https://www.hualigs.cn/image/qxoXh" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/09/20/a1a79ffe67cd7ad75ae9e97138f9e4a0.md.jpg" alt="a1a79ffe67cd7ad75ae9e97138f9e4a0.md.jpg"></a></p>
+<p>7、集成在jQuery UI上的Bootstrap -jQuery UI Bootstrap</p>
+<p><a href="https://www.hualigs.cn/image/qxOWB" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/09/20/89aded6656e1cf541eefd9f0a6ea6f90.md.jpg" alt="89aded6656e1cf541eefd9f0a6ea6f90.md.jpg"></a></p>
+<p>8、轻量级CSS布局排版框架 –EZ-CSS</p>
+<p>EZ-CSS是一款轻量级的CSS布局排版框架。</p>
+<p><a href="https://www.hualigs.cn/image/qxtUj" target="_blank" rel="noopener"><img src="https://ww1.yunjiexi.club/2019/09/20/a9e38ea3abe1ad674f5bbd3356539f50.jpg" alt="a9e38ea3abe1ad674f5bbd3356539f50.jpg"></a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/移动web/" rel="tag"># 移动web</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/08/Vue的生命周期/" rel="next" title="Vue的生命周期">
+                <i class="fa fa-chevron-left"></i> Vue的生命周期
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/09/钩子函数和回调函数的区别/" rel="prev" title="钩子函数和回调函数的区别">
+                钩子函数和回调函数的区别 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/head.jpg" alt="鹦鹉螺">
+            
+              <p class="site-author-name" itemprop="name">鹦鹉螺</p>
+              <p class="site-description motion-element" itemprop="description">前端在路上</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ThisNautilus" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="xxliyang@foxmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#移动端与PC端页面布局区别"><span class="nav-number">1.</span> <span class="nav-text">移动端与PC端页面布局区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#视网膜屏幕（retina屏幕）清晰度解决方案"><span class="nav-number">2.</span> <span class="nav-text">视网膜屏幕（retina屏幕）清晰度解决方案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#适配布局类型"><span class="nav-number">3.</span> <span class="nav-text">适配布局类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#移动端页面布局"><span class="nav-number">4.</span> <span class="nav-text">移动端页面布局</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用CSS框架"><span class="nav-number">5.</span> <span class="nav-text">常用CSS框架</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">鹦鹉螺</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
